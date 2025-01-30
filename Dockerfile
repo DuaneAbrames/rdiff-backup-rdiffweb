@@ -1,4 +1,4 @@
-FROM waazaafr/ubuntu-base:24.04
+FROM ubuntu:24.04
 
 ENV APP_NAME="rdiff-backup"
 ENV TZ=Europe/Paris
