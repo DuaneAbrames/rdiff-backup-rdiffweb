@@ -5,7 +5,7 @@ VERSION="waazaafr/rdiff-backup-rdiffweb:0.0.5"
 echo "********************************************************************************************"
 
 ################################################################################################
-##### Si le dossier /app n'existe pas on le crée
+##### If the /app folder does not exist, we create it.
 APP_FOLDER=/app
 if [ ! -d "$APP_FOLDER" ]; then
     mkdir -p $APP_FOLDER
@@ -13,7 +13,16 @@ if [ ! -d "$APP_FOLDER" ]; then
 fi
 
 ################################################################################################
-##### Si le dossier /cron n'existe pas on le crée
+##### If the /app/include-list.txt file does not exist, we create it.
+
+INCL_FILE=/app/include-list.txt
+if [ ! -d "$INCL_FILE" ]; then
+    touch $INCL_FILE
+    chmod -R 0777 $INCL_FILE
+fi
+
+################################################################################################
+##### If the /cron folder does not exist, we create it.
 CRON_FOLDER=/cron
 if [ ! -d "$CRON_FOLDER" ]; then
     mkdir -p $CRON_FOLDER
@@ -22,7 +31,7 @@ if [ ! -d "$CRON_FOLDER" ]; then
 fi
 
 ################################################################################################
-##### Si le dossier /app/logs n'existe pas on le crée
+##### If the /app/logs folder does not exist, we create it.
 LOGS_FOLDER=/app/logs
 if [ ! -d "$LOGS_FOLDER" ]; then
     mkdir -p $LOGS_FOLDER
@@ -31,7 +40,7 @@ if [ ! -d "$LOGS_FOLDER" ]; then
 fi
 
 ################################################################################################
-##### Si le rdw.conf n'existe pas dans /app alors on mets une version initiale
+##### If rdw.conf does not exist in /app then we create an initial version
 RDW_CONF_FILE="$APP_FOLDER/rdw.conf"
 if [ ! -f "$RDW_CONF_FILE" ]; then
     cp /rdiff/app/rdw.conf /app
@@ -41,7 +50,7 @@ fi
 
 
 ################################################################################################
-##### Si le dossier /app/images n'existe pas on le crée
+##### If the /app/images folder does not exist, we create it.
 IMAGES_FOLDER=/app/images
 if [ ! -d "$IMAGES_FOLDER" ]; then
     cp -R /rdiff/app/images /app/
