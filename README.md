@@ -1,6 +1,8 @@
 *rdiff-backup-rdiffweb*
 
-Source: https://github.com/waazaa-fr/rdiff-backup-rdiffweb
+Original Source: https://github.com/waazaa-fr/rdiff-backup-rdiffweb
+
+Added an optional include-list file (see https://rdiff-backup.net/examples.html#file_selection_with_includeexclude_options for syntax)
 
 =======================================================================
 
